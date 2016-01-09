@@ -1,3 +1,7 @@
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+    
+lucky:
+    path:     /lucky
+    defaults: { _controller: AppBundle:Lucky:index }

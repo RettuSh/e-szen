@@ -23,11 +23,11 @@
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">appDevDebugProjectContainer</parameter>
-    <parameter key="database_host">127.0.0.1</parameter>
-    <parameter key="database_port">null</parameter>
-    <parameter key="database_name">e-szen</parameter>
-    <parameter key="database_user">root</parameter>
-    <parameter key="database_password">null</parameter>
+    <parameter key="database_host">mysql.hostinger.pl</parameter>
+    <parameter key="database_port">3306</parameter>
+    <parameter key="database_name">u414113671_eszen</parameter>
+    <parameter key="database_user">u414113671_eszen</parameter>
+    <parameter key="database_password">eszen123</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">127.0.0.1</parameter>
     <parameter key="mailer_user">null</parameter>
@@ -1468,7 +1468,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5690f30f91e9b3.19498921</argument>
+            <argument>5691252fb1a856.15078249</argument>
           </service>
         </argument>
       </argument>
@@ -1597,7 +1597,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>5690f30f91e9b3.19498921</argument>
+            <argument>5691252fb1a856.15078249</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -1894,11 +1894,11 @@
     <service id="doctrine.dbal.default_connection" class="Doctrine\DBAL\Connection">
       <argument type="collection">
         <argument key="driver">pdo_mysql</argument>
-        <argument key="host">127.0.0.1</argument>
-        <argument key="port">null</argument>
-        <argument key="dbname">e-szen</argument>
-        <argument key="user">root</argument>
-        <argument key="password">null</argument>
+        <argument key="host">mysql.hostinger.pl</argument>
+        <argument key="port">3306</argument>
+        <argument key="dbname">u414113671_eszen</argument>
+        <argument key="user">u414113671_eszen</argument>
+        <argument key="password">eszen123</argument>
         <argument key="charset">UTF8</argument>
         <argument key="driverOptions" type="collection"/>
         <argument key="defaultTableOptions" type="collection"/>
