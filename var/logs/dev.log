@@ -1,0 +1,2 @@
+[2016-01-09 12:46:28] php.DEBUG: symlink(): Could not fetch file information(error 3) {"type":2,"file":"C:\\Users\\Krzysiu\\projects\\e-szen\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Filesystem\\Filesystem.php","line":308,"level":28928} []
+[2016-01-09 12:46:28] php.DEBUG: symlink(): Cannot create symlink, error code(1314) {"type":2,"file":"C:\\Users\\Krzysiu\\projects\\e-szen\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Filesystem\\Filesystem.php","line":308,"level":28928} []
