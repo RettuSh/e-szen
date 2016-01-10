@@ -5,3 +5,7 @@ app:
 lucky:
     path:     /lucky
     defaults: { _controller: AppBundle:Lucky:index }
+    
+home: 
+    path:     /home
+    defaults: { _controller: HomeBundle:Default:index }
