@@ -14,11 +14,22 @@ class AppKernel extends Kernel
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            // Sensio
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            // new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
+            // Mopa
+            new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
             // new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             // new Craue\FormFlowBundle\CraueFormFlowBundle(),
+            // FOS
             new FOS\UserBundle\FOSUserBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+
+            new Craue\FormFlowBundle\CraueFormFlowBundle(),
+
+            new Liip\ImagineBundle\LiipImagineBundle(),
+            // Knp
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+
             new AppBundle\AppBundle(),
             new HomeBundle\HomeBundle(),
         ];

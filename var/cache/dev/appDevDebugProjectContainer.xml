@@ -15,8 +15,14 @@
       <parameter key="SwiftmailerBundle">Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
+      <parameter key="MopaBootstrapBundle">Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
+      <parameter key="FOSRestBundle">FOS\RestBundle\FOSRestBundle</parameter>
+      <parameter key="CraueFormFlowBundle">Craue\FormFlowBundle\CraueFormFlowBundle</parameter>
+      <parameter key="LiipImagineBundle">Liip\ImagineBundle\LiipImagineBundle</parameter>
+      <parameter key="KnpMenuBundle">Knp\Bundle\MenuBundle\KnpMenuBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
+      <parameter key="HomeBundle">HomeBundle\HomeBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -24,7 +30,6 @@
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">appDevDebugProjectContainer</parameter>
-    <parameter key="database_driver">pdo_mysql</parameter>
     <parameter key="database_host">127.0.0.1</parameter>
     <parameter key="database_port">3306</parameter>
     <parameter key="database_name">eszen</parameter>
@@ -78,6 +83,7 @@
     <parameter key="router.cache_class_prefix">appDev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
+    <parameter key="serializer.mapping.cache.prefix"></parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
     <parameter key="debug.container.dump">/Users/adriancieslak/projects/e-szen/var/cache/dev/appDevDebugProjectContainer.xml</parameter>
     <parameter key="security.authentication.trust_resolver.anonymous_class">Symfony\Component\Security\Core\Authentication\Token\AnonymousToken</parameter>
@@ -98,6 +104,8 @@
     <parameter key="twig.exception_listener.controller">twig.controller.exception:showAction</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>MopaBootstrapBundle:Form:fields.html.twig</parameter>
+      <parameter>LiipImagineBundle:Form:form_div_layout.html.twig</parameter>
     </parameter>
     <parameter key="monolog.logger.class">Symfony\Bridge\Monolog\Logger</parameter>
     <parameter key="monolog.gelf.publisher.class">Gelf\MessagePublisher</parameter>
@@ -305,6 +313,106 @@
     <parameter key="sensio_framework_extra.converter.doctrine.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter</parameter>
     <parameter key="sensio_framework_extra.converter.datetime.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter</parameter>
     <parameter key="sensio_framework_extra.view.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener</parameter>
+    <parameter key="mopa_bootstrap.bootstrap.install_path">Resources/public/bootstrap</parameter>
+    <parameter key="mopa_bootstrap.twig.extension.form.class">Mopa\Bundle\BootstrapBundle\Twig\FormExtension</parameter>
+    <parameter key="mopa_bootstrap.twig.extension.icon.class">Mopa\Bundle\BootstrapBundle\Twig\IconExtension</parameter>
+    <parameter key="mopa_bootstrap.twig.extension.flash.class">Mopa\Bundle\BootstrapBundle\Twig\FlashExtension</parameter>
+    <parameter key="mopa_bootstrap.form.type_extension.embed_form.class">Mopa\Bundle\BootstrapBundle\Form\Extension\EmbedFormExtension</parameter>
+    <parameter key="mopa_bootstrap.form.type_extension.static_text.class">Mopa\Bundle\BootstrapBundle\Form\Extension\StaticTextExtension</parameter>
+    <parameter key="mopa_bootstrap.form.type_extension.offset_button.class">Mopa\Bundle\BootstrapBundle\Form\Extension\OffsetButtonExtension</parameter>
+    <parameter key="mopa_bootstrap.form.type_extension.button.class">Mopa\Bundle\BootstrapBundle\Form\Extension\IconButtonExtension</parameter>
+    <parameter key="mopa_bootstrap.form.type_extension.help.class">Mopa\Bundle\BootstrapBundle\Form\Extension\HelpFormTypeExtension</parameter>
+    <parameter key="mopa_bootstrap.form.type_extension.legend.class">Mopa\Bundle\BootstrapBundle\Form\Extension\LegendFormTypeExtension</parameter>
+    <parameter key="mopa_bootstrap.form.type_extension.error.class">Mopa\Bundle\BootstrapBundle\Form\Extension\ErrorTypeFormTypeExtension</parameter>
+    <parameter key="mopa_bootstrap.form.type_extension.widget.class">Mopa\Bundle\BootstrapBundle\Form\Extension\WidgetFormTypeExtension</parameter>
+    <parameter key="mopa_bootstrap.form.type_extension.horizontal.class">Mopa\Bundle\BootstrapBundle\Form\Extension\HorizontalFormTypeExtension</parameter>
+    <parameter key="mopa_bootstrap.form.type_extension.widget_collection.class">Mopa\Bundle\BootstrapBundle\Form\Extension\WidgetCollectionFormTypeExtension</parameter>
+    <parameter key="mopa_bootstrap.form.type_extension.date.class">Mopa\Bundle\BootstrapBundle\Form\Extension\DateTypeExtension</parameter>
+    <parameter key="mopa_bootstrap.form.type_extension.datetime.class">Mopa\Bundle\BootstrapBundle\Form\Extension\DatetimeTypeExtension</parameter>
+    <parameter key="mopa_bootstrap.form.type_extension.time.class">Mopa\Bundle\BootstrapBundle\Form\Extension\TimeTypeExtension</parameter>
+    <parameter key="mopa_bootstrap.form.type_extension.tabbed.class">Mopa\Bundle\BootstrapBundle\Form\Extension\TabbedFormTypeExtension</parameter>
+    <parameter key="mopa_bootstrap.form.type.tab.class">Mopa\Bundle\BootstrapBundle\Form\Type\TabType</parameter>
+    <parameter key="mopa_bootstrap.form.type.form_actions.class">Mopa\Bundle\BootstrapBundle\Form\Type\FormActionsType</parameter>
+    <parameter key="mopa_bootstrap.form.show_legend">false</parameter>
+    <parameter key="mopa_bootstrap.form.show_child_legend">false</parameter>
+    <parameter key="mopa_bootstrap.form.error_type">block</parameter>
+    <parameter key="mopa_bootstrap.form.templating">MopaBootstrapBundle:Form:fields.html.twig</parameter>
+    <parameter key="mopa_bootstrap.form.horizontal">true</parameter>
+    <parameter key="mopa_bootstrap.form.horizontal_label_class">col-sm-3</parameter>
+    <parameter key="mopa_bootstrap.form.horizontal_label_offset_class">col-sm-offset-3</parameter>
+    <parameter key="mopa_bootstrap.form.horizontal_input_wrapper_class">col-sm-9</parameter>
+    <parameter key="mopa_bootstrap.form.date_wrapper_class.year">col-xs-4</parameter>
+    <parameter key="mopa_bootstrap.form.date_wrapper_class.month">col-xs-4</parameter>
+    <parameter key="mopa_bootstrap.form.date_wrapper_class.day">col-xs-4</parameter>
+    <parameter key="mopa_bootstrap.form.render_fieldset">true</parameter>
+    <parameter key="mopa_bootstrap.form.render_collection_item">true</parameter>
+    <parameter key="mopa_bootstrap.form.legend_tag">legend</parameter>
+    <parameter key="mopa_bootstrap.form.checkbox_label">both</parameter>
+    <parameter key="mopa_bootstrap.form.render_optional_text">true</parameter>
+    <parameter key="mopa_bootstrap.form.render_required_asterisk">false</parameter>
+    <parameter key="mopa_bootstrap.form.tabs.class">nav nav-tabs</parameter>
+    <parameter key="mopa_bootstrap.form.help_widget.popover" type="collection">
+      <parameter key="title">null</parameter>
+      <parameter key="content">null</parameter>
+      <parameter key="trigger">hover</parameter>
+      <parameter key="toggle">popover</parameter>
+      <parameter key="placement">right</parameter>
+      <parameter key="selector">null</parameter>
+    </parameter>
+    <parameter key="mopa_bootstrap.form.help_label.tooltip" type="collection">
+      <parameter key="title">null</parameter>
+      <parameter key="text">null</parameter>
+      <parameter key="icon">info-sign</parameter>
+      <parameter key="placement">top</parameter>
+    </parameter>
+    <parameter key="mopa_bootstrap.form.help_label.popover" type="collection">
+      <parameter key="title">null</parameter>
+      <parameter key="content">null</parameter>
+      <parameter key="text">null</parameter>
+      <parameter key="icon">info-sign</parameter>
+      <parameter key="placement">top</parameter>
+    </parameter>
+    <parameter key="mopa_bootstrap.form.help_block.tooltip" type="collection">
+      <parameter key="title">null</parameter>
+      <parameter key="text">null</parameter>
+      <parameter key="icon">info-sign</parameter>
+      <parameter key="placement">top</parameter>
+    </parameter>
+    <parameter key="mopa_bootstrap.form.help_block.popover" type="collection">
+      <parameter key="title">null</parameter>
+      <parameter key="content">null</parameter>
+      <parameter key="text">null</parameter>
+      <parameter key="icon">info-sign</parameter>
+      <parameter key="placement">top</parameter>
+    </parameter>
+    <parameter key="mopa_bootstrap.form.collection.widget_remove_btn" type="collection">
+      <parameter key="attr" type="collection">
+        <parameter key="class">btn btn-default</parameter>
+      </parameter>
+      <parameter key="wrapper_div" type="collection">
+        <parameter key="class">form-group</parameter>
+      </parameter>
+      <parameter key="horizontal_wrapper_div" type="collection">
+        <parameter key="class">col-sm-3 col-sm-offset-3</parameter>
+      </parameter>
+      <parameter key="label">remove_item</parameter>
+      <parameter key="icon">null</parameter>
+      <parameter key="icon_inverted">false</parameter>
+    </parameter>
+    <parameter key="mopa_bootstrap.form.collection.widget_add_btn" type="collection">
+      <parameter key="attr" type="collection">
+        <parameter key="class">btn btn-default</parameter>
+      </parameter>
+      <parameter key="label">add_item</parameter>
+      <parameter key="icon">null</parameter>
+      <parameter key="icon_inverted">false</parameter>
+    </parameter>
+    <parameter key="mopa_bootstrap.twig.extension.menu.class">Mopa\Bundle\BootstrapBundle\Twig\MenuExtension</parameter>
+    <parameter key="mopa_bootstrap.menu.extension.class">Mopa\Bundle\BootstrapBundle\Menu\Factory\MenuExtension</parameter>
+    <parameter key="mopa_bootstrap.menu.template">MyBundles:Menu:template.html.twig</parameter>
+    <parameter key="mopa_bootstrap.menu.enabled">true</parameter>
+    <parameter key="mopa_bootstrap.icons.icon_set">glyphicons</parameter>
+    <parameter key="mopa_bootstrap.icons.shortcut">icon</parameter>
     <parameter key="fos_user.backend_type_orm">true</parameter>
     <parameter key="fos_user.security.interactive_login_listener.class">FOS\UserBundle\EventListener\LastLoginListener</parameter>
     <parameter key="fos_user.security.login_manager.class">FOS\UserBundle\Security\LoginManager</parameter>
@@ -346,6 +454,122 @@
       <parameter>ResetPassword</parameter>
       <parameter>Default</parameter>
     </parameter>
+    <parameter key="fos_rest.serializer.exclusion_strategy.version"></parameter>
+    <parameter key="fos_rest.serializer.exclusion_strategy.groups"></parameter>
+    <parameter key="fos_rest.view_handler.jsonp.callback_param"></parameter>
+    <parameter key="fos_rest.view.exception_wrapper_handler">FOS\RestBundle\View\ExceptionWrapperHandler</parameter>
+    <parameter key="fos_rest.view_handler.default.class">FOS\RestBundle\View\ViewHandler</parameter>
+    <parameter key="fos_rest.view_handler.jsonp.class">FOS\RestBundle\View\JsonpHandler</parameter>
+    <parameter key="fos_rest.serializer.exception_wrapper_serialize_handler.class">FOS\RestBundle\Serializer\ExceptionWrapperSerializeHandler</parameter>
+    <parameter key="fos_rest.routing.loader.controller.class">FOS\RestBundle\Routing\Loader\RestRouteLoader</parameter>
+    <parameter key="fos_rest.routing.loader.yaml_collection.class">FOS\RestBundle\Routing\Loader\RestYamlCollectionLoader</parameter>
+    <parameter key="fos_rest.routing.loader.xml_collection.class">FOS\RestBundle\Routing\Loader\RestXmlCollectionLoader</parameter>
+    <parameter key="fos_rest.routing.loader.processor.class">FOS\RestBundle\Routing\Loader\RestRouteProcessor</parameter>
+    <parameter key="fos_rest.routing.loader.reader.controller.class">FOS\RestBundle\Routing\Loader\Reader\RestControllerReader</parameter>
+    <parameter key="fos_rest.routing.loader.reader.action.class">FOS\RestBundle\Routing\Loader\Reader\RestActionReader</parameter>
+    <parameter key="fos_rest.format_negotiator.class">FOS\RestBundle\Util\FormatNegotiator</parameter>
+    <parameter key="fos_rest.inflector.class">FOS\RestBundle\Util\Inflector\DoctrineInflector</parameter>
+    <parameter key="fos_rest.request_matcher.class">Symfony\Component\HttpFoundation\RequestMatcher</parameter>
+    <parameter key="fos_rest.violation_formatter.class">FOS\RestBundle\Util\ViolationFormatter</parameter>
+    <parameter key="fos_rest.request.param_fetcher.class">FOS\RestBundle\Request\ParamFetcher</parameter>
+    <parameter key="fos_rest.request.param_fetcher.reader.class">FOS\RestBundle\Request\ParamReader</parameter>
+    <parameter key="fos_rest.cache_dir">/Users/adriancieslak/projects/e-szen/var/cache/dev/fos_rest</parameter>
+    <parameter key="fos_rest.routing.loader.default_format">null</parameter>
+    <parameter key="fos_rest.routing.loader.include_format">true</parameter>
+    <parameter key="fos_rest.serializer.serialize_null">false</parameter>
+    <parameter key="fos_rest.exception.codes" type="collection"/>
+    <parameter key="fos_rest.exception.messages" type="collection"/>
+    <parameter key="fos_rest.converter.request_body.validation_errors_argument">validationErrors</parameter>
+    <parameter key="fos_rest.mime_types" type="collection"/>
+    <parameter key="fos_rest.formats" type="collection">
+      <parameter key="json">false</parameter>
+      <parameter key="xml">false</parameter>
+      <parameter key="html">true</parameter>
+    </parameter>
+    <parameter key="fos_rest.force_redirects" type="collection">
+      <parameter key="html">302</parameter>
+    </parameter>
+    <parameter key="fos_rest.failed_validation">400</parameter>
+    <parameter key="fos_rest.empty_content">204</parameter>
+    <parameter key="fos_rest.serialize_null">false</parameter>
+    <parameter key="fos_rest.default_engine">twig</parameter>
+    <parameter key="fos_rest.normalizer.camel_keys.class">FOS\RestBundle\Normalizer\CamelKeysNormalizer</parameter>
+    <parameter key="fos_rest.decoder.json.class">FOS\RestBundle\Decoder\JsonDecoder</parameter>
+    <parameter key="fos_rest.decoder.jsontoform.class">FOS\RestBundle\Decoder\JsonToFormDecoder</parameter>
+    <parameter key="fos_rest.decoder.xml.class">FOS\RestBundle\Decoder\XmlDecoder</parameter>
+    <parameter key="fos_rest.decoder_provider.class">FOS\RestBundle\Decoder\ContainerDecoderProvider</parameter>
+    <parameter key="fos_rest.body_listener.class">FOS\RestBundle\EventListener\BodyListener</parameter>
+    <parameter key="fos_rest.throw_exception_on_unsupported_content_type">false</parameter>
+    <parameter key="fos_rest.body_default_format">null</parameter>
+    <parameter key="fos_rest.decoders" type="collection">
+      <parameter key="json">fos_rest.decoder.json</parameter>
+      <parameter key="xml">fos_rest.decoder.xml</parameter>
+    </parameter>
+    <parameter key="craue.form.flow.class">Craue\FormFlowBundle\Form\FormFlow</parameter>
+    <parameter key="craue.form.flow.storage.class">Craue\FormFlowBundle\Storage\SessionStorage</parameter>
+    <parameter key="craue.form.flow.event_listener.previous_step_invalid.class">Craue\FormFlowBundle\EventListener\PreviousStepInvalidEventListener</parameter>
+    <parameter key="craue.form.flow.event_listener.previous_step_invalid.event">flow.previous_step_invalid</parameter>
+    <parameter key="craue_twig_extensions.formflow.class">Craue\FormFlowBundle\Twig\Extension\FormFlowExtension</parameter>
+    <parameter key="craue_formflow.util.class">Craue\FormFlowBundle\Util\FormFlowUtil</parameter>
+    <parameter key="liip_imagine.filter.configuration.class">Liip\ImagineBundle\Imagine\Filter\FilterConfiguration</parameter>
+    <parameter key="liip_imagine.filter.manager.class">Liip\ImagineBundle\Imagine\Filter\FilterManager</parameter>
+    <parameter key="liip_imagine.data.manager.class">Liip\ImagineBundle\Imagine\Data\DataManager</parameter>
+    <parameter key="liip_imagine.cache.manager.class">Liip\ImagineBundle\Imagine\Cache\CacheManager</parameter>
+    <parameter key="liip_imagine.cache.signer.class">Liip\ImagineBundle\Imagine\Cache\Signer</parameter>
+    <parameter key="liip_imagine.binary.mime_type_guesser.class">Liip\ImagineBundle\Binary\SimpleMimeTypeGuesser</parameter>
+    <parameter key="liip_imagine.controller.class">Liip\ImagineBundle\Controller\ImagineController</parameter>
+    <parameter key="liip_imagine.twig.extension.class">Liip\ImagineBundle\Templating\ImagineExtension</parameter>
+    <parameter key="liip_imagine.templating.helper.class">Liip\ImagineBundle\Templating\Helper\ImagineHelper</parameter>
+    <parameter key="liip_imagine.gd.class">Imagine\Gd\Imagine</parameter>
+    <parameter key="liip_imagine.imagick.class">Imagine\Imagick\Imagine</parameter>
+    <parameter key="liip_imagine.gmagick.class">Imagine\Gmagick\Imagine</parameter>
+    <parameter key="liip_imagine.filter.loader.relative_resize.class">Liip\ImagineBundle\Imagine\Filter\Loader\RelativeResizeFilterLoader</parameter>
+    <parameter key="liip_imagine.filter.loader.resize.class">Liip\ImagineBundle\Imagine\Filter\Loader\ResizeFilterLoader</parameter>
+    <parameter key="liip_imagine.filter.loader.thumbnail.class">Liip\ImagineBundle\Imagine\Filter\Loader\ThumbnailFilterLoader</parameter>
+    <parameter key="liip_imagine.filter.loader.crop.class">Liip\ImagineBundle\Imagine\Filter\Loader\CropFilterLoader</parameter>
+    <parameter key="liip_imagine.filter.loader.paste.class">Liip\ImagineBundle\Imagine\Filter\Loader\PasteFilterLoader</parameter>
+    <parameter key="liip_imagine.filter.loader.watermark.class">Liip\ImagineBundle\Imagine\Filter\Loader\WatermarkFilterLoader</parameter>
+    <parameter key="liip_imagine.filter.loader.strip.class">Liip\ImagineBundle\Imagine\Filter\Loader\StripFilterLoader</parameter>
+    <parameter key="liip_imagine.filter.loader.background.class">Liip\ImagineBundle\Imagine\Filter\Loader\BackgroundFilterLoader</parameter>
+    <parameter key="liip_imagine.filter.loader.upscale.class">Liip\ImagineBundle\Imagine\Filter\Loader\UpscaleFilterLoader</parameter>
+    <parameter key="liip_imagine.filter.loader.downscale.class">Liip\ImagineBundle\Imagine\Filter\Loader\DownscaleFilterLoader</parameter>
+    <parameter key="liip_imagine.filter.loader.auto_rotate.class">Liip\ImagineBundle\Imagine\Filter\Loader\AutoRotateFilterLoader</parameter>
+    <parameter key="liip_imagine.filter.loader.rotate.class">Liip\ImagineBundle\Imagine\Filter\Loader\RotateFilterLoader</parameter>
+    <parameter key="liip_imagine.filter.loader.interlace.class">Liip\ImagineBundle\Imagine\Filter\Loader\InterlaceFilterLoader</parameter>
+    <parameter key="liip_imagine.binary.loader.filesystem.class">Liip\ImagineBundle\Binary\Loader\FileSystemLoader</parameter>
+    <parameter key="liip_imagine.binary.loader.stream.class">Liip\ImagineBundle\Binary\Loader\StreamLoader</parameter>
+    <parameter key="liip_imagine.cache.resolver.web_path.class">Liip\ImagineBundle\Imagine\Cache\Resolver\WebPathResolver</parameter>
+    <parameter key="liip_imagine.cache.resolver.no_cache_web_path.class">Liip\ImagineBundle\Imagine\Cache\Resolver\NoCacheWebPathResolver</parameter>
+    <parameter key="liip_imagine.cache.resolver.aws_s3.class">Liip\ImagineBundle\Imagine\Cache\Resolver\AwsS3Resolver</parameter>
+    <parameter key="liip_imagine.cache.resolver.cache.class">Liip\ImagineBundle\Imagine\Cache\Resolver\CacheResolver</parameter>
+    <parameter key="liip_imagine.cache.resolver.proxy.class">Liip\ImagineBundle\Imagine\Cache\Resolver\ProxyResolver</parameter>
+    <parameter key="liip_imagine.form.type.image.class">Liip\ImagineBundle\Form\Type\ImageType</parameter>
+    <parameter key="liip_imagine.meta_data.reader.class">Imagine\Image\Metadata\ExifMetadataReader</parameter>
+    <parameter key="liip_imagine.filter.post_processor.jpegoptim.class">Liip\ImagineBundle\Imagine\Filter\PostProcessor\JpegOptimPostProcessor</parameter>
+    <parameter key="liip_imagine.jpegoptim.binary">/usr/bin/jpegoptim</parameter>
+    <parameter key="liip_imagine.cache.resolver.default">default</parameter>
+    <parameter key="liip_imagine.default_image">null</parameter>
+    <parameter key="liip_imagine.filter_sets" type="collection"/>
+    <parameter key="liip_imagine.binary.loader.default">default</parameter>
+    <parameter key="liip_imagine.controller.filter_action">liip_imagine.controller:filterAction</parameter>
+    <parameter key="liip_imagine.controller.filter_runtime_action">liip_imagine.controller:filterRuntimeAction</parameter>
+    <parameter key="knp_menu.factory.class">Knp\Menu\MenuFactory</parameter>
+    <parameter key="knp_menu.factory_extension.routing.class">Knp\Menu\Integration\Symfony\RoutingExtension</parameter>
+    <parameter key="knp_menu.helper.class">Knp\Menu\Twig\Helper</parameter>
+    <parameter key="knp_menu.matcher.class">Knp\Menu\Matcher\Matcher</parameter>
+    <parameter key="knp_menu.menu_provider.chain.class">Knp\Menu\Provider\ChainProvider</parameter>
+    <parameter key="knp_menu.menu_provider.container_aware.class">Knp\Bundle\MenuBundle\Provider\ContainerAwareProvider</parameter>
+    <parameter key="knp_menu.menu_provider.builder_alias.class">Knp\Bundle\MenuBundle\Provider\BuilderAliasProvider</parameter>
+    <parameter key="knp_menu.renderer_provider.class">Knp\Bundle\MenuBundle\Renderer\ContainerAwareProvider</parameter>
+    <parameter key="knp_menu.renderer.list.class">Knp\Menu\Renderer\ListRenderer</parameter>
+    <parameter key="knp_menu.renderer.list.options" type="collection"/>
+    <parameter key="knp_menu.listener.voters.class">Knp\Bundle\MenuBundle\EventListener\VoterInitializerListener</parameter>
+    <parameter key="knp_menu.voter.router.class">Knp\Menu\Matcher\Voter\RouteVoter</parameter>
+    <parameter key="knp_menu.twig.extension.class">Knp\Menu\Twig\MenuExtension</parameter>
+    <parameter key="knp_menu.renderer.twig.class">Knp\Menu\Renderer\TwigRenderer</parameter>
+    <parameter key="knp_menu.renderer.twig.options" type="collection"/>
+    <parameter key="knp_menu.renderer.twig.template">knp_menu.html.twig</parameter>
+    <parameter key="knp_menu.default_renderer">twig</parameter>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
@@ -651,6 +875,7 @@
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ar.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ar.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ar.xlf</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/mopa/bootstrap-bundle/Mopa/Bundle/BootstrapBundle/Resources/translations/pagination.ar.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ar.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ar.yml</argument>
           </argument>
@@ -679,6 +904,8 @@
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.cs.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.cs.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.cs.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/CraueFormFlowBundle.cs.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/validators.cs.yml</argument>
           </argument>
           <argument key="cy" type="collection">
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.cy.xlf</argument>
@@ -694,8 +921,11 @@
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.de.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.de.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.de.xlf</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/mopa/bootstrap-bundle/Mopa/Bundle/BootstrapBundle/Resources/translations/pagination.de.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.de.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.de.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/CraueFormFlowBundle.de.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/validators.de.yml</argument>
           </argument>
           <argument key="el" type="collection">
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.el.xlf</argument>
@@ -708,15 +938,21 @@
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.en.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.en.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.en.xlf</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/mopa/bootstrap-bundle/Mopa/Bundle/BootstrapBundle/Resources/translations/pagination.en.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.en.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.en.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/CraueFormFlowBundle.en.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/validators.en.yml</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.es.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.es.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.es.xlf</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/mopa/bootstrap-bundle/Mopa/Bundle/BootstrapBundle/Resources/translations/pagination.es.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.es.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.es.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/CraueFormFlowBundle.es.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/validators.es.yml</argument>
           </argument>
           <argument key="et" type="collection">
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.et.xlf</argument>
@@ -735,6 +971,8 @@
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.fa.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.fa.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.fa.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/CraueFormFlowBundle.fa.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/validators.fa.yml</argument>
           </argument>
           <argument key="fi" type="collection">
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.fi.xlf</argument>
@@ -746,8 +984,11 @@
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.fr.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.fr.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.fr.xlf</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/mopa/bootstrap-bundle/Mopa/Bundle/BootstrapBundle/Resources/translations/pagination.fr.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.fr.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.fr.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/CraueFormFlowBundle.fr.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/validators.fr.yml</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.gl.xlf</argument>
@@ -790,6 +1031,7 @@
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.it.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.it.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.it.xlf</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/mopa/bootstrap-bundle/Mopa/Bundle/BootstrapBundle/Resources/translations/pagination.it.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.it.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.it.yml</argument>
           </argument>
@@ -797,6 +1039,7 @@
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ja.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ja.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ja.xlf</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/mopa/bootstrap-bundle/Mopa/Bundle/BootstrapBundle/Resources/translations/pagination.ja.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ja.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ja.yml</argument>
           </argument>
@@ -810,6 +1053,7 @@
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.lt.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.lt.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.lt.xlf</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/mopa/bootstrap-bundle/Mopa/Bundle/BootstrapBundle/Resources/translations/pagination.lt.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.lt.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.lt.yml</argument>
           </argument>
@@ -827,8 +1071,11 @@
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.nl.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.nl.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.nl.xlf</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/mopa/bootstrap-bundle/Mopa/Bundle/BootstrapBundle/Resources/translations/pagination.nl.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.nl.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.nl.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/CraueFormFlowBundle.nl.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/validators.nl.yml</argument>
           </argument>
           <argument key="no" type="collection">
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.no.xlf</argument>
@@ -838,12 +1085,16 @@
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.pl.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.pl.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.pl.xlf</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/mopa/bootstrap-bundle/Mopa/Bundle/BootstrapBundle/Resources/translations/pagination.pl.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.pl.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.pl.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/CraueFormFlowBundle.pl.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/validators.pl.yml</argument>
           </argument>
           <argument key="pt" type="collection">
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.pt.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.pt.xlf</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/mopa/bootstrap-bundle/Mopa/Bundle/BootstrapBundle/Resources/translations/pagination.pt.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.pt.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.pt.yml</argument>
           </argument>
@@ -853,6 +1104,8 @@
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.pt_BR.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.pt_BR.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.pt_BR.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/CraueFormFlowBundle.pt_BR.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/validators.pt_BR.yml</argument>
           </argument>
           <argument key="ro" type="collection">
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ro.xlf</argument>
@@ -865,13 +1118,17 @@
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ru.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ru.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ru.xlf</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/mopa/bootstrap-bundle/Mopa/Bundle/BootstrapBundle/Resources/translations/pagination.ru.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ru.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ru.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/CraueFormFlowBundle.ru.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/validators.ru.yml</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sk.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sk.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sk.xlf</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/mopa/bootstrap-bundle/Mopa/Bundle/BootstrapBundle/Resources/translations/pagination.sk.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.sk.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sk.yml</argument>
           </argument>
@@ -879,6 +1136,7 @@
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sl.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sl.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sl.xlf</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/mopa/bootstrap-bundle/Mopa/Bundle/BootstrapBundle/Resources/translations/pagination.sl.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.sl.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sl.yml</argument>
           </argument>
@@ -901,6 +1159,7 @@
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sv.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sv.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sv.xlf</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/mopa/bootstrap-bundle/Mopa/Bundle/BootstrapBundle/Resources/translations/pagination.sv.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.sv.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sv.yml</argument>
           </argument>
@@ -919,8 +1178,11 @@
           <argument key="uk" type="collection">
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.uk.xlf</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.uk.xlf</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/mopa/bootstrap-bundle/Mopa/Bundle/BootstrapBundle/Resources/translations/pagination.uk.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.uk.yml</argument>
             <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.uk.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/CraueFormFlowBundle.uk.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/validators.uk.yml</argument>
           </argument>
           <argument key="vi" type="collection">
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.vi.xlf</argument>
@@ -948,6 +1210,10 @@
           </argument>
           <argument key="ua" type="collection">
             <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ua.xlf</argument>
+          </argument>
+          <argument key="zh" type="collection">
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/CraueFormFlowBundle.zh.yml</argument>
+            <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/translations/validators.zh.yml</argument>
           </argument>
         </argument>
       </argument>
@@ -1209,11 +1475,14 @@
               <argument key="Symfony\Component\Form\Extension\Core\Type\ResetType">form.type.reset</argument>
               <argument key="Symfony\Component\Form\Extension\Core\Type\CurrencyType">form.type.currency</argument>
               <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType">form.type.entity</argument>
+              <argument key="Mopa\Bundle\BootstrapBundle\Form\Type\TabType">mopa_bootstrap.form.type.tab</argument>
+              <argument key="Mopa\Bundle\BootstrapBundle\Form\Type\FormActionsType">mopa_bootstrap.form.type.form_actions</argument>
               <argument key="FOS\UserBundle\Form\Type\UsernameFormType">fos_user.username_form_type</argument>
               <argument key="FOS\UserBundle\Form\Type\ProfileFormType">fos_user.profile.form.type</argument>
               <argument key="FOS\UserBundle\Form\Type\RegistrationFormType">fos_user.registration.form.type</argument>
               <argument key="FOS\UserBundle\Form\Type\ChangePasswordFormType">fos_user.change_password.form.type</argument>
               <argument key="FOS\UserBundle\Form\Type\ResettingFormType">fos_user.resetting.form.type</argument>
+              <argument key="Liip\ImagineBundle\Form\Type\ImageType">liip_imagine.form.type.image</argument>
             </argument>
             <argument type="collection">
               <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="collection">
@@ -1221,12 +1490,38 @@
                 <argument>form.type_extension.form.validator</argument>
                 <argument>form.type_extension.csrf</argument>
                 <argument>form.type_extension.form.data_collector</argument>
+                <argument>mopa_bootstrap.form.type_extension.embed_form</argument>
+                <argument>mopa_bootstrap.form.type_extension.static_text</argument>
+                <argument>mopa_bootstrap.form.type_extension.help</argument>
+                <argument>mopa_bootstrap.form.type_extension.legend</argument>
+                <argument>mopa_bootstrap.form.type_extension.error</argument>
+                <argument>mopa_bootstrap.form.type_extension.widget</argument>
+                <argument>mopa_bootstrap.form.type_extension.horizontal</argument>
+                <argument>mopa_bootstrap.form.type_extension.widget_collection</argument>
+                <argument>mopa_bootstrap.form.type_extension.tabbed</argument>
+                <argument>craue.form.flow.form_extension</argument>
               </argument>
               <argument key="Symfony\Component\Form\Extension\Core\Type\RepeatedType" type="collection">
                 <argument>form.type_extension.repeated.validator</argument>
               </argument>
               <argument key="Symfony\Component\Form\Extension\Core\Type\SubmitType" type="collection">
                 <argument>form.type_extension.submit.validator</argument>
+              </argument>
+              <argument key="Symfony\Component\Form\Extension\Core\Type\ButtonType" type="collection">
+                <argument>mopa_bootstrap.form.type_extension.offset_button</argument>
+                <argument>mopa_bootstrap.form.type_extension.button</argument>
+              </argument>
+              <argument key="Symfony\Component\Form\Extension\Core\Type\DateType" type="collection">
+                <argument>mopa_bootstrap.form.type_extension.date</argument>
+              </argument>
+              <argument key="Symfony\Component\Form\Extension\Core\Type\DateTimeType" type="collection">
+                <argument>mopa_bootstrap.form.type_extension.datetime</argument>
+              </argument>
+              <argument key="Symfony\Component\Form\Extension\Core\Type\TimeType" type="collection">
+                <argument>mopa_bootstrap.form.type_extension.time</argument>
+              </argument>
+              <argument key="Symfony\Component\Form\Extension\Core\Type\HiddenType" type="collection">
+                <argument>craue.form.flow.hidden_field_extension</argument>
               </argument>
             </argument>
             <argument type="collection">
@@ -1707,6 +2002,15 @@
               </service>
             </argument>
           </call>
+          <call method="addLoader">
+            <argument type="service" id="fos_rest.routing.loader.controller"/>
+          </call>
+          <call method="addLoader">
+            <argument type="service" id="fos_rest.routing.loader.yaml_collection"/>
+          </call>
+          <call method="addLoader">
+            <argument type="service" id="fos_rest.routing.loader.xml_collection"/>
+          </call>
         </service>
       </argument>
     </service>
@@ -1725,6 +2029,40 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger.request" on-invalid="ignore"/>
+    </service>
+    <service id="serializer" class="Symfony\Component\Serializer\Serializer">
+      <argument type="collection">
+        <argument type="service" id="fos_rest.serializer.exception_wrapper_normalizer"/>
+        <argument type="service">
+          <service class="Symfony\Component\Serializer\Normalizer\ObjectNormalizer" public="false">
+            <tag name="serializer.normalizer" priority="-1000"/>
+            <argument type="service">
+              <service class="Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory" public="false">
+                <argument type="service">
+                  <service class="Symfony\Component\Serializer\Mapping\Loader\LoaderChain" public="false">
+                    <argument type="collection"/>
+                  </service>
+                </argument>
+                <argument>null</argument>
+              </service>
+            </argument>
+            <argument>null</argument>
+            <argument type="service" id="property_accessor"/>
+          </service>
+        </argument>
+      </argument>
+      <argument type="collection">
+        <argument type="service">
+          <service class="Symfony\Component\Serializer\Encoder\XmlEncoder" public="false">
+            <tag name="serializer.encoder"/>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Serializer\Encoder\JsonEncoder" public="false">
+            <tag name="serializer.encoder"/>
+          </service>
+        </argument>
+      </argument>
     </service>
     <service id="debug.debug_handlers_listener" class="Symfony\Component\HttpKernel\EventListener\DebugHandlersListener">
       <tag name="kernel.event_subscriber"/>
@@ -1751,6 +2089,30 @@
         <argument type="collection">
           <argument>data_collector.router</argument>
           <argument>onKernelController</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListenerService">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument>fos_rest.body_listener</argument>
+          <argument>onKernelRequest</argument>
+        </argument>
+        <argument>10</argument>
+      </call>
+      <call method="addListenerService">
+        <argument>%craue.form.flow.event_listener.previous_step_invalid.event%</argument>
+        <argument type="collection">
+          <argument>craue.form.flow.event_listener.previous_step_invalid</argument>
+          <argument>onPreviousStepInvalid</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListenerService">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument>knp_menu.listener.voters</argument>
+          <argument>onKernelRequest</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -1894,7 +2256,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5692422faa6fb0.07333355</argument>
+            <argument>569288bfac2b89.26736069</argument>
           </service>
         </argument>
       </argument>
@@ -2195,7 +2557,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>5692422faa6fb0.07333355</argument>
+            <argument>569288bfac2b89.26736069</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2420,6 +2782,8 @@
                   <service class="Symfony\Bridge\Twig\Form\TwigRendererEngine" public="false">
                     <argument type="collection">
                       <argument>form_div_layout.html.twig</argument>
+                      <argument>MopaBootstrapBundle:Form:fields.html.twig</argument>
+                      <argument>LiipImagineBundle:Form:form_div_layout.html.twig</argument>
                     </argument>
                   </service>
                 </argument>
@@ -2440,6 +2804,39 @@
         <argument type="service">
           <service class="Doctrine\Bundle\DoctrineBundle\Twig\DoctrineExtension" public="false">
             <tag name="twig.extension"/>
+          </service>
+        </argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="mopa_bootstrap.twig.extension.bootstrap_form"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="mopa_bootstrap.twig.extension.bootstrap_icon"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="mopa_bootstrap.twig.extension.bootstrap_flash"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="mopa_bootstrap.twig.extension.menu"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="twig.extension.craue_formflow"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service">
+          <service class="Liip\ImagineBundle\Templating\ImagineExtension" public="false">
+            <tag name="twig.extension"/>
+            <argument type="service" id="liip_imagine.cache.manager"/>
+          </service>
+        </argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service">
+          <service class="Knp\Menu\Twig\MenuExtension" public="false">
+            <tag name="twig.extension"/>
+            <argument type="service" id="knp_menu.helper"/>
+            <argument type="service" id="knp_menu.matcher"/>
+            <argument type="service" id="knp_menu.manipulator"/>
           </service>
         </argument>
       </call>
@@ -2773,6 +3170,174 @@
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <argument type="service" id="security.authorization_checker" on-invalid="null"/>
     </service>
+    <service id="mopa_bootstrap.twig.extension.bootstrap_form" class="Mopa\Bundle\BootstrapBundle\Twig\FormExtension">
+      <tag name="twig.extension"/>
+    </service>
+    <service id="mopa_bootstrap.twig.extension.bootstrap_icon" class="Mopa\Bundle\BootstrapBundle\Twig\IconExtension">
+      <tag name="twig.extension"/>
+      <argument>glyphicons</argument>
+      <argument>icon</argument>
+    </service>
+    <service id="mopa_bootstrap.twig.extension.bootstrap_flash" class="Mopa\Bundle\BootstrapBundle\Twig\FlashExtension">
+      <tag name="twig.extension"/>
+      <argument type="collection">
+        <argument key="success">success</argument>
+        <argument key="error">danger</argument>
+        <argument key="danger">danger</argument>
+        <argument key="warning">warning</argument>
+        <argument key="warn">warning</argument>
+        <argument key="info">info</argument>
+        <argument key="notice">info</argument>
+      </argument>
+    </service>
+    <service id="mopa_bootstrap.form.type_extension.embed_form" class="Mopa\Bundle\BootstrapBundle\Form\Extension\EmbedFormExtension">
+      <tag name="form.type_extension" alias="form" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
+    </service>
+    <service id="mopa_bootstrap.form.type_extension.static_text" class="Mopa\Bundle\BootstrapBundle\Form\Extension\StaticTextExtension">
+      <tag name="form.type_extension" alias="form" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
+    </service>
+    <service id="mopa_bootstrap.form.type_extension.offset_button" class="Mopa\Bundle\BootstrapBundle\Form\Extension\OffsetButtonExtension">
+      <tag name="form.type_extension" alias="button" extended_type="Symfony\Component\Form\Extension\Core\Type\ButtonType" extended-type="Symfony\Component\Form\Extension\Core\Type\ButtonType"/>
+    </service>
+    <service id="mopa_bootstrap.form.type_extension.button" class="Mopa\Bundle\BootstrapBundle\Form\Extension\IconButtonExtension">
+      <tag name="form.type_extension" alias="button" extended_type="Symfony\Component\Form\Extension\Core\Type\ButtonType" extended-type="Symfony\Component\Form\Extension\Core\Type\ButtonType"/>
+    </service>
+    <service id="mopa_bootstrap.form.type_extension.help" class="Mopa\Bundle\BootstrapBundle\Form\Extension\HelpFormTypeExtension">
+      <tag name="form.type_extension" alias="form" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
+      <argument type="collection">
+        <argument key="help_block_tooltip" type="collection">
+          <argument key="title">null</argument>
+          <argument key="text">null</argument>
+          <argument key="icon">info-sign</argument>
+          <argument key="placement">top</argument>
+        </argument>
+        <argument key="help_block_popover" type="collection">
+          <argument key="title">null</argument>
+          <argument key="content">null</argument>
+          <argument key="text">null</argument>
+          <argument key="icon">info-sign</argument>
+          <argument key="placement">top</argument>
+        </argument>
+        <argument key="help_label_tooltip" type="collection">
+          <argument key="title">null</argument>
+          <argument key="text">null</argument>
+          <argument key="icon">info-sign</argument>
+          <argument key="placement">top</argument>
+        </argument>
+        <argument key="help_label_popover" type="collection">
+          <argument key="title">null</argument>
+          <argument key="content">null</argument>
+          <argument key="text">null</argument>
+          <argument key="icon">info-sign</argument>
+          <argument key="placement">top</argument>
+        </argument>
+        <argument key="help_widget_popover" type="collection">
+          <argument key="title">null</argument>
+          <argument key="content">null</argument>
+          <argument key="trigger">hover</argument>
+          <argument key="toggle">popover</argument>
+          <argument key="placement">right</argument>
+          <argument key="selector">null</argument>
+        </argument>
+      </argument>
+    </service>
+    <service id="mopa_bootstrap.form.type_extension.legend" class="Mopa\Bundle\BootstrapBundle\Form\Extension\LegendFormTypeExtension">
+      <tag name="form.type_extension" alias="form" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
+      <argument type="collection">
+        <argument key="render_fieldset">true</argument>
+        <argument key="show_legend">false</argument>
+        <argument key="show_child_legend">false</argument>
+        <argument key="legend_tag">legend</argument>
+        <argument key="render_required_asterisk">false</argument>
+        <argument key="render_optional_text">true</argument>
+      </argument>
+    </service>
+    <service id="mopa_bootstrap.form.type_extension.error" class="Mopa\Bundle\BootstrapBundle\Form\Extension\ErrorTypeFormTypeExtension">
+      <tag name="form.type_extension" alias="form" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
+      <argument type="collection">
+        <argument key="error_type">block</argument>
+      </argument>
+    </service>
+    <service id="mopa_bootstrap.form.type_extension.widget" class="Mopa\Bundle\BootstrapBundle\Form\Extension\WidgetFormTypeExtension">
+      <tag name="form.type_extension" alias="form" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
+      <argument type="collection">
+        <argument key="checkbox_label">both</argument>
+      </argument>
+    </service>
+    <service id="mopa_bootstrap.form.type_extension.horizontal" class="Mopa\Bundle\BootstrapBundle\Form\Extension\HorizontalFormTypeExtension">
+      <tag name="form.type_extension" alias="form" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
+      <argument type="collection">
+        <argument key="horizontal">true</argument>
+        <argument key="horizontal_label_class">col-sm-3</argument>
+        <argument key="horizontal_label_offset_class">col-sm-offset-3</argument>
+        <argument key="horizontal_input_wrapper_class">col-sm-9</argument>
+      </argument>
+    </service>
+    <service id="mopa_bootstrap.form.type_extension.widget_collection" class="Mopa\Bundle\BootstrapBundle\Form\Extension\WidgetCollectionFormTypeExtension">
+      <tag name="form.type_extension" alias="form" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
+      <argument type="collection">
+        <argument key="render_collection_item">true</argument>
+        <argument key="widget_add_btn" type="collection">
+          <argument key="attr" type="collection">
+            <argument key="class">btn btn-default</argument>
+          </argument>
+          <argument key="label">add_item</argument>
+          <argument key="icon">null</argument>
+          <argument key="icon_inverted">false</argument>
+        </argument>
+        <argument key="widget_remove_btn" type="collection">
+          <argument key="attr" type="collection">
+            <argument key="class">btn btn-default</argument>
+          </argument>
+          <argument key="wrapper_div" type="collection">
+            <argument key="class">form-group</argument>
+          </argument>
+          <argument key="horizontal_wrapper_div" type="collection">
+            <argument key="class">col-sm-3 col-sm-offset-3</argument>
+          </argument>
+          <argument key="label">remove_item</argument>
+          <argument key="icon">null</argument>
+          <argument key="icon_inverted">false</argument>
+        </argument>
+      </argument>
+    </service>
+    <service id="mopa_bootstrap.form.type_extension.date" class="Mopa\Bundle\BootstrapBundle\Form\Extension\DateTypeExtension">
+      <tag name="form.type_extension" alias="date" extended_type="Symfony\Component\Form\Extension\Core\Type\DateType" extended-type="Symfony\Component\Form\Extension\Core\Type\DateType"/>
+      <argument type="collection">
+        <argument key="date_wrapper_class" type="collection">
+          <argument key="year">col-xs-4</argument>
+          <argument key="month">col-xs-4</argument>
+          <argument key="day">col-xs-4</argument>
+        </argument>
+      </argument>
+    </service>
+    <service id="mopa_bootstrap.form.type_extension.datetime" class="Mopa\Bundle\BootstrapBundle\Form\Extension\DatetimeTypeExtension">
+      <tag name="form.type_extension" alias="datetime" extended_type="Symfony\Component\Form\Extension\Core\Type\DateTimeType" extended-type="Symfony\Component\Form\Extension\Core\Type\DateTimeType"/>
+    </service>
+    <service id="mopa_bootstrap.form.type_extension.time" class="Mopa\Bundle\BootstrapBundle\Form\Extension\TimeTypeExtension">
+      <tag name="form.type_extension" alias="time" extended_type="Symfony\Component\Form\Extension\Core\Type\TimeType" extended-type="Symfony\Component\Form\Extension\Core\Type\TimeType"/>
+    </service>
+    <service id="mopa_bootstrap.form.type_extension.tabbed" class="Mopa\Bundle\BootstrapBundle\Form\Extension\TabbedFormTypeExtension">
+      <tag name="form.type_extension" alias="form" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
+      <argument type="service" id="form.factory"/>
+      <argument type="collection">
+        <argument key="class">nav nav-tabs</argument>
+      </argument>
+    </service>
+    <service id="mopa_bootstrap.form.type.tab" class="Mopa\Bundle\BootstrapBundle\Form\Type\TabType">
+      <tag name="form.type"/>
+    </service>
+    <service id="mopa_bootstrap.form.type.form_actions" class="Mopa\Bundle\BootstrapBundle\Form\Type\FormActionsType">
+      <tag name="form.type"/>
+    </service>
+    <service id="mopa_bootstrap.twig.extension.menu" class="Mopa\Bundle\BootstrapBundle\Twig\MenuExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="knp_menu.helper"/>
+      <argument>MyBundles:Menu:template.html.twig</argument>
+    </service>
+    <service id="mopa_bootstrap.menu.extension" class="Mopa\Bundle\BootstrapBundle\Menu\Factory\MenuExtension">
+      <tag name="knp_menu.factory_extension" priority="-100"/>
+    </service>
     <service id="fos_user.security.interactive_login_listener" class="FOS\UserBundle\EventListener\LastLoginListener">
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="fos_user.user_manager"/>
@@ -2863,6 +3428,373 @@
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="router"/>
       <argument>86400</argument>
+    </service>
+    <service id="fos_rest.view.exception_wrapper_handler" class="FOS\RestBundle\View\ExceptionWrapperHandler"/>
+    <service id="fos_rest.serializer.exception_wrapper_normalizer" class="FOS\RestBundle\Serializer\ExceptionWrapperNormalizer">
+      <tag name="serializer.normalizer"/>
+      <argument type="service" id="translator"/>
+    </service>
+    <service id="fos_rest.routing.loader.controller" class="FOS\RestBundle\Routing\Loader\RestRouteLoader">
+      <tag name="routing.loader"/>
+      <argument type="service" id="service_container"/>
+      <argument type="service" id="file_locator"/>
+      <argument type="service" id="controller_name_converter"/>
+      <argument type="service" id="fos_rest.routing.loader.reader.controller"/>
+      <argument>null</argument>
+    </service>
+    <service id="fos_rest.routing.loader.processor" class="FOS\RestBundle\Routing\Loader\RestRouteProcessor"/>
+    <service id="fos_rest.routing.loader.yaml_collection" class="FOS\RestBundle\Routing\Loader\RestYamlCollectionLoader">
+      <tag name="routing.loader"/>
+      <argument type="service" id="file_locator"/>
+      <argument type="service" id="fos_rest.routing.loader.processor"/>
+      <argument>true</argument>
+      <argument type="collection">
+        <argument key="json">false</argument>
+        <argument key="xml">false</argument>
+        <argument key="html">true</argument>
+      </argument>
+      <argument>null</argument>
+    </service>
+    <service id="fos_rest.routing.loader.xml_collection" class="FOS\RestBundle\Routing\Loader\RestXmlCollectionLoader">
+      <tag name="routing.loader"/>
+      <argument type="service" id="file_locator"/>
+      <argument type="service" id="fos_rest.routing.loader.processor"/>
+      <argument>true</argument>
+      <argument type="collection">
+        <argument key="json">false</argument>
+        <argument key="xml">false</argument>
+        <argument key="html">true</argument>
+      </argument>
+      <argument>null</argument>
+    </service>
+    <service id="fos_rest.routing.loader.reader.controller" class="FOS\RestBundle\Routing\Loader\Reader\RestControllerReader">
+      <argument type="service" id="fos_rest.routing.loader.reader.action"/>
+      <argument type="service" id="annotation_reader"/>
+    </service>
+    <service id="fos_rest.routing.loader.reader.action" class="FOS\RestBundle\Routing\Loader\Reader\RestActionReader">
+      <argument type="service" id="annotation_reader"/>
+      <argument type="service" id="fos_rest.request.param_fetcher.reader"/>
+      <argument type="service" id="fos_rest.inflector.doctrine"/>
+      <argument>true</argument>
+      <argument type="collection">
+        <argument key="json">false</argument>
+        <argument key="xml">false</argument>
+        <argument key="html">true</argument>
+      </argument>
+    </service>
+    <service id="fos_rest.format_negotiator" class="FOS\RestBundle\Util\FormatNegotiator"/>
+    <service id="fos_rest.exception_format_negotiator" class="FOS\RestBundle\Util\FormatNegotiator"/>
+    <service id="fos_rest.inflector.doctrine" class="FOS\RestBundle\Util\Inflector\DoctrineInflector"/>
+    <service id="fos_rest.violation_formatter" class="FOS\RestBundle\Util\ViolationFormatter"/>
+    <service id="fos_rest.request.param_fetcher" class="FOS\RestBundle\Request\ParamFetcher">
+      <argument type="service" id="fos_rest.request.param_fetcher.reader"/>
+      <argument type="service" id="request_stack" on-invalid="null"/>
+      <argument type="service" id="fos_rest.violation_formatter"/>
+      <argument type="service" id="validator" on-invalid="null"/>
+    </service>
+    <service id="fos_rest.request.param_fetcher.reader" class="FOS\RestBundle\Request\ParamReader">
+      <argument type="service" id="annotation_reader"/>
+    </service>
+    <service id="fos_rest.normalizer.camel_keys" class="FOS\RestBundle\Normalizer\CamelKeysNormalizer"/>
+    <service id="fos_rest.normalizer.camel_keys_with_leading_underscore" class="FOS\RestBundle\Normalizer\CamelKeysNormalizerWithLeadingUnderscore"/>
+    <service id="fos_rest.decoder.json" class="FOS\RestBundle\Decoder\JsonDecoder"/>
+    <service id="fos_rest.decoder.jsontoform" class="FOS\RestBundle\Decoder\JsonToFormDecoder"/>
+    <service id="fos_rest.decoder.xml" class="FOS\RestBundle\Decoder\XmlDecoder"/>
+    <service id="fos_rest.decoder_provider" class="FOS\RestBundle\Decoder\ContainerDecoderProvider">
+      <argument type="collection">
+        <argument key="json">fos_rest.decoder.json</argument>
+        <argument key="xml">fos_rest.decoder.xml</argument>
+      </argument>
+      <call method="setContainer">
+        <argument type="service" id="service_container"/>
+      </call>
+    </service>
+    <service id="fos_rest.body_listener" class="FOS\RestBundle\EventListener\BodyListener">
+      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" priority="10"/>
+      <argument type="service" id="fos_rest.decoder_provider"/>
+      <argument>false</argument>
+      <call method="setDefaultFormat">
+        <argument>null</argument>
+      </call>
+    </service>
+    <service id="craue.form.flow" class="Craue\FormFlowBundle\Form\FormFlow">
+      <call method="setDataManager">
+        <argument type="service" id="craue.form.flow.data_manager"/>
+      </call>
+      <call method="setFormFactory">
+        <argument type="service" id="form.factory"/>
+      </call>
+      <call method="setRequestStack">
+        <argument type="service" id="request_stack"/>
+      </call>
+      <call method="setEventDispatcher">
+        <argument type="service" id="debug.event_dispatcher" on-invalid="ignore"/>
+      </call>
+    </service>
+    <service id="craue.form.flow.form_extension" class="Craue\FormFlowBundle\Form\Extension\FormFlowFormExtension">
+      <tag name="form.type_extension" alias="form" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
+    </service>
+    <service id="craue.form.flow.hidden_field_extension" class="Craue\FormFlowBundle\Form\Extension\FormFlowHiddenFieldExtension">
+      <tag name="form.type_extension" alias="hidden" extended_type="Symfony\Component\Form\Extension\Core\Type\HiddenType" extended-type="Symfony\Component\Form\Extension\Core\Type\HiddenType"/>
+    </service>
+    <service id="craue.form.flow.event_listener.previous_step_invalid" class="Craue\FormFlowBundle\EventListener\PreviousStepInvalidEventListener">
+      <tag name="kernel.event_listener" event="%craue.form.flow.event_listener.previous_step_invalid.event%" method="onPreviousStepInvalid"/>
+      <call method="setTranslator">
+        <argument type="service" id="translator"/>
+      </call>
+    </service>
+    <service id="twig.extension.craue_formflow" class="Craue\FormFlowBundle\Twig\Extension\FormFlowExtension">
+      <tag name="twig.extension"/>
+      <call method="setFormFlowUtil">
+        <argument type="service" id="craue_formflow_util"/>
+      </call>
+    </service>
+    <service id="craue_formflow_util" class="Craue\FormFlowBundle\Util\FormFlowUtil"/>
+    <service id="liip_imagine.cache.resolver.default" class="Liip\ImagineBundle\Imagine\Cache\Resolver\WebPathResolver">
+      <tag name="liip_imagine.cache.resolver" resolver="default"/>
+      <argument type="service" id="filesystem"/>
+      <argument type="service" id="router.request_context"/>
+      <argument>/Users/adriancieslak/projects/e-szen/app/../web</argument>
+      <argument>media/cache</argument>
+    </service>
+    <service id="liip_imagine.binary.loader.default" class="Liip\ImagineBundle\Binary\Loader\FileSystemLoader">
+      <tag name="liip_imagine.binary.loader" loader="default"/>
+      <argument type="service" id="liip_imagine.mime_type_guesser"/>
+      <argument type="service" id="liip_imagine.extension_guesser"/>
+      <argument>/Users/adriancieslak/projects/e-szen/app/../web</argument>
+    </service>
+    <service id="liip_imagine.filter.manager" class="Liip\ImagineBundle\Imagine\Filter\FilterManager">
+      <argument type="service" id="liip_imagine.filter.configuration"/>
+      <argument type="service" id="liip_imagine"/>
+      <argument type="service" id="liip_imagine.binary.mime_type_guesser"/>
+      <call method="addLoader">
+        <argument>relative_resize</argument>
+        <argument type="service" id="liip_imagine.filter.loader.relative_resize"/>
+      </call>
+      <call method="addLoader">
+        <argument>resize</argument>
+        <argument type="service" id="liip_imagine.filter.loader.resize"/>
+      </call>
+      <call method="addLoader">
+        <argument>thumbnail</argument>
+        <argument type="service" id="liip_imagine.filter.loader.thumbnail"/>
+      </call>
+      <call method="addLoader">
+        <argument>crop</argument>
+        <argument type="service" id="liip_imagine.filter.loader.crop"/>
+      </call>
+      <call method="addLoader">
+        <argument>paste</argument>
+        <argument type="service" id="liip_imagine.filter.loader.paste"/>
+      </call>
+      <call method="addLoader">
+        <argument>watermark</argument>
+        <argument type="service" id="liip_imagine.filter.loader.watermark"/>
+      </call>
+      <call method="addLoader">
+        <argument>background</argument>
+        <argument type="service" id="liip_imagine.filter.loader.background"/>
+      </call>
+      <call method="addLoader">
+        <argument>strip</argument>
+        <argument type="service" id="liip_imagine.filter.loader.strip"/>
+      </call>
+      <call method="addLoader">
+        <argument>upscale</argument>
+        <argument type="service" id="liip_imagine.filter.loader.upscale"/>
+      </call>
+      <call method="addLoader">
+        <argument>downscale</argument>
+        <argument type="service" id="liip_imagine.filter.loader.downscale"/>
+      </call>
+      <call method="addLoader">
+        <argument>auto_rotate</argument>
+        <argument type="service" id="liip_imagine.filter.loader.auto_rotate"/>
+      </call>
+      <call method="addLoader">
+        <argument>rotate</argument>
+        <argument type="service" id="liip_imagine.filter.loader.rotate"/>
+      </call>
+      <call method="addLoader">
+        <argument>interlace</argument>
+        <argument type="service" id="liip_imagine.filter.loader.interlace"/>
+      </call>
+      <call method="addPostProcessor">
+        <argument>jpegoptim</argument>
+        <argument type="service" id="liip_imagine.filter.post_processor.jpegoptim"/>
+      </call>
+    </service>
+    <service id="liip_imagine.data.manager" class="Liip\ImagineBundle\Imagine\Data\DataManager">
+      <argument type="service" id="liip_imagine.binary.mime_type_guesser"/>
+      <argument type="service" id="liip_imagine.extension_guesser"/>
+      <argument type="service" id="liip_imagine.filter.configuration"/>
+      <argument>default</argument>
+      <argument>null</argument>
+      <call method="addLoader">
+        <argument>default</argument>
+        <argument type="service" id="liip_imagine.binary.loader.default"/>
+      </call>
+    </service>
+    <service id="liip_imagine.cache.manager" class="Liip\ImagineBundle\Imagine\Cache\CacheManager">
+      <argument type="service" id="liip_imagine.filter.configuration"/>
+      <argument type="service" id="router"/>
+      <argument type="service" id="liip_imagine.cache.signer"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument>default</argument>
+      <call method="addResolver">
+        <argument>default</argument>
+        <argument type="service" id="liip_imagine.cache.resolver.default"/>
+      </call>
+      <call method="addResolver">
+        <argument>no_cache</argument>
+        <argument type="service" id="liip_imagine.cache.resolver.no_cache_web_path"/>
+      </call>
+    </service>
+    <service id="liip_imagine.filter.configuration" class="Liip\ImagineBundle\Imagine\Filter\FilterConfiguration">
+      <argument type="collection"/>
+    </service>
+    <service id="liip_imagine.controller" class="Liip\ImagineBundle\Controller\ImagineController">
+      <argument type="service" id="liip_imagine.data.manager"/>
+      <argument type="service" id="liip_imagine.filter.manager"/>
+      <argument type="service" id="liip_imagine.cache.manager"/>
+      <argument type="service" id="liip_imagine.cache.signer"/>
+      <argument type="service" id="logger" on-invalid="ignore"/>
+    </service>
+    <service id="liip_imagine.templating.helper" class="Liip\ImagineBundle\Templating\Helper\ImagineHelper">
+      <tag name="templating.helper" alias="imagine"/>
+      <argument type="service" id="liip_imagine.cache.manager"/>
+    </service>
+    <service id="liip_imagine.filter.loader.relative_resize" class="Liip\ImagineBundle\Imagine\Filter\Loader\RelativeResizeFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="relative_resize"/>
+    </service>
+    <service id="liip_imagine.filter.loader.resize" class="Liip\ImagineBundle\Imagine\Filter\Loader\ResizeFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="resize"/>
+    </service>
+    <service id="liip_imagine.filter.loader.thumbnail" class="Liip\ImagineBundle\Imagine\Filter\Loader\ThumbnailFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="thumbnail"/>
+    </service>
+    <service id="liip_imagine.filter.loader.crop" class="Liip\ImagineBundle\Imagine\Filter\Loader\CropFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="crop"/>
+    </service>
+    <service id="liip_imagine.filter.loader.paste" class="Liip\ImagineBundle\Imagine\Filter\Loader\PasteFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="paste"/>
+      <argument type="service" id="liip_imagine"/>
+      <argument>/Users/adriancieslak/projects/e-szen/app</argument>
+    </service>
+    <service id="liip_imagine.filter.loader.watermark" class="Liip\ImagineBundle\Imagine\Filter\Loader\WatermarkFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="watermark"/>
+      <argument type="service" id="liip_imagine"/>
+      <argument>/Users/adriancieslak/projects/e-szen/app</argument>
+    </service>
+    <service id="liip_imagine.filter.loader.background" class="Liip\ImagineBundle\Imagine\Filter\Loader\BackgroundFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="background"/>
+      <argument type="service" id="liip_imagine"/>
+    </service>
+    <service id="liip_imagine.filter.loader.strip" class="Liip\ImagineBundle\Imagine\Filter\Loader\StripFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="strip"/>
+    </service>
+    <service id="liip_imagine.filter.loader.upscale" class="Liip\ImagineBundle\Imagine\Filter\Loader\UpscaleFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="upscale"/>
+    </service>
+    <service id="liip_imagine.filter.loader.downscale" class="Liip\ImagineBundle\Imagine\Filter\Loader\DownscaleFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="downscale"/>
+    </service>
+    <service id="liip_imagine.filter.loader.auto_rotate" class="Liip\ImagineBundle\Imagine\Filter\Loader\AutoRotateFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="auto_rotate"/>
+    </service>
+    <service id="liip_imagine.filter.loader.rotate" class="Liip\ImagineBundle\Imagine\Filter\Loader\RotateFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="rotate"/>
+    </service>
+    <service id="liip_imagine.filter.loader.interlace" class="Liip\ImagineBundle\Imagine\Filter\Loader\InterlaceFilterLoader">
+      <tag name="liip_imagine.filter.loader" loader="interlace"/>
+    </service>
+    <service id="liip_imagine.binary.loader.prototype.filesystem" class="Liip\ImagineBundle\Binary\Loader\FileSystemLoader">
+      <argument type="service" id="liip_imagine.mime_type_guesser"/>
+      <argument type="service" id="liip_imagine.extension_guesser"/>
+      <argument></argument>
+    </service>
+    <service id="liip_imagine.binary.loader.prototype.stream" class="Liip\ImagineBundle\Binary\Loader\StreamLoader">
+      <argument></argument>
+      <argument></argument>
+    </service>
+    <service id="liip_imagine.cache.resolver.no_cache_web_path" class="Liip\ImagineBundle\Imagine\Cache\Resolver\NoCacheWebPathResolver">
+      <tag name="liip_imagine.cache.resolver" resolver="no_cache"/>
+      <argument type="service" id="router.request_context"/>
+    </service>
+    <service id="liip_imagine.form.type.image" class="Liip\ImagineBundle\Form\Type\ImageType">
+      <tag name="form.type" alias="liip_imagine_image"/>
+    </service>
+    <service id="liip_imagine.mime_type_guesser" class="Symfony\Component\HttpFoundation\File\MimeType\MimeTypeGuesserInterface">
+      <factory class="Symfony\Component\HttpFoundation\File\MimeType\MimeTypeGuesser" method="getInstance"/>
+    </service>
+    <service id="liip_imagine.extension_guesser" class="Symfony\Component\HttpFoundation\File\MimeType\ExtensionGuesserInterface">
+      <factory class="Symfony\Component\HttpFoundation\File\MimeType\ExtensionGuesser" method="getInstance"/>
+    </service>
+    <service id="liip_imagine.binary.mime_type_guesser" class="Liip\ImagineBundle\Binary\SimpleMimeTypeGuesser">
+      <argument type="service" id="liip_imagine.mime_type_guesser"/>
+    </service>
+    <service id="liip_imagine.cache.signer" class="Liip\ImagineBundle\Imagine\Cache\Signer">
+      <argument>ThisTokenIsNotSoSecretChangeIt</argument>
+    </service>
+    <service id="liip_imagine.filter.post_processor.jpegoptim" class="Liip\ImagineBundle\Imagine\Filter\PostProcessor\JpegOptimPostProcessor">
+      <tag name="liip_imagine.filter.post_processor" post_processor="jpegoptim"/>
+      <argument>/usr/bin/jpegoptim</argument>
+    </service>
+    <service id="knp_menu.factory" class="Knp\Menu\MenuFactory">
+      <call method="addExtension">
+        <argument type="service" id="mopa_bootstrap.menu.extension"/>
+        <argument>-100</argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service">
+          <service class="Knp\Menu\Integration\Symfony\RoutingExtension" public="false">
+            <tag name="knp_menu.factory_extension"/>
+            <argument type="service" id="router"/>
+          </service>
+        </argument>
+        <argument>0</argument>
+      </call>
+    </service>
+    <service id="knp_menu.helper" class="Knp\Menu\Twig\Helper" public="false">
+      <argument type="service" id="knp_menu.renderer_provider"/>
+      <argument type="service" id="knp_menu.menu_provider"/>
+      <argument type="service" id="knp_menu.manipulator"/>
+    </service>
+    <service id="knp_menu.matcher" class="Knp\Menu\Matcher\Matcher">
+      <call method="addVoter">
+        <argument type="service" id="knp_menu.voter.router"/>
+      </call>
+    </service>
+    <service id="knp_menu.renderer_provider" class="Knp\Bundle\MenuBundle\Renderer\ContainerAwareProvider">
+      <argument type="service" id="service_container"/>
+      <argument>twig</argument>
+      <argument type="collection">
+        <argument key="list">knp_menu.renderer.list</argument>
+        <argument key="twig">knp_menu.renderer.twig</argument>
+      </argument>
+    </service>
+    <service id="knp_menu.renderer.list" class="Knp\Menu\Renderer\ListRenderer">
+      <tag name="knp_menu.renderer" alias="list"/>
+      <argument type="service" id="knp_menu.matcher"/>
+      <argument type="collection"/>
+      <argument>UTF-8</argument>
+    </service>
+    <service id="knp_menu.listener.voters" class="Knp\Bundle\MenuBundle\EventListener\VoterInitializerListener">
+      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+      <call method="addVoter">
+        <argument type="service" id="knp_menu.voter.router"/>
+      </call>
+    </service>
+    <service id="knp_menu.voter.router" class="Knp\Menu\Matcher\Voter\RouteVoter">
+      <tag name="knp_menu.voter" request="1"/>
+    </service>
+    <service id="knp_menu.manipulator" class="Knp\Menu\Util\MenuManipulator" public="false"/>
+    <service id="knp_menu.renderer.twig" class="Knp\Menu\Renderer\TwigRenderer">
+      <tag name="knp_menu.renderer" alias="twig"/>
+      <argument type="service" id="twig"/>
+      <argument>knp_menu.html.twig</argument>
+      <argument type="service" id="knp_menu.matcher"/>
+      <argument type="collection"/>
     </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>
@@ -3183,8 +4115,20 @@
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
+        <argument>/Users/adriancieslak/projects/e-szen/vendor/mopa/bootstrap-bundle/Mopa/Bundle/BootstrapBundle/Resources/views</argument>
+        <argument>MopaBootstrap</argument>
+      </call>
+      <call method="addPath">
         <argument>/Users/adriancieslak/projects/e-szen/vendor/friendsofsymfony/user-bundle/Resources/views</argument>
         <argument>FOSUser</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/adriancieslak/projects/e-szen/vendor/craue/formflow-bundle/Resources/views</argument>
+        <argument>CraueFormFlow</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/adriancieslak/projects/e-szen/vendor/liip/imagine-bundle/Resources/views</argument>
+        <argument>LiipImagine</argument>
       </call>
       <call method="addPath">
         <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
@@ -3199,6 +4143,9 @@
       </call>
       <call method="addPath">
         <argument>/Users/adriancieslak/projects/e-szen/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/adriancieslak/projects/e-szen/vendor/knplabs/knp-menu/src/Knp/Menu/Resources/views</argument>
       </call>
     </service>
     <service id="logger" class="Symfony\Bridge\Monolog\Logger">
@@ -3305,6 +4252,71 @@
       </argument>
       <argument>AppBundle\Entity\User</argument>
     </service>
+    <service id="fos_rest.view_handler" class="FOS\RestBundle\View\ViewHandler">
+      <argument type="collection">
+        <argument key="json">false</argument>
+        <argument key="xml">false</argument>
+        <argument key="html">true</argument>
+      </argument>
+      <argument>400</argument>
+      <argument>204</argument>
+      <argument>false</argument>
+      <argument type="collection">
+        <argument key="html">302</argument>
+      </argument>
+      <argument>twig</argument>
+      <call method="setExclusionStrategyGroups">
+        <argument></argument>
+      </call>
+      <call method="setExclusionStrategyVersion">
+        <argument></argument>
+      </call>
+      <call method="setSerializeNullStrategy">
+        <argument>false</argument>
+      </call>
+      <call method="setContainer">
+        <argument type="service" id="service_container"/>
+      </call>
+    </service>
+    <service id="craue.form.flow.storage" class="Craue\FormFlowBundle\Storage\SessionStorage">
+      <argument type="service" id="session"/>
+    </service>
+    <service id="craue.form.flow.data_manager" class="Craue\FormFlowBundle\Storage\DataManager">
+      <argument type="service" id="craue.form.flow.storage"/>
+    </service>
+    <service id="liip_imagine" class="Imagine\Gd\Imagine">
+      <call method="setMetadataReader">
+        <argument type="service">
+          <service class="Imagine\Image\Metadata\ExifMetadataReader" public="false"/>
+        </argument>
+      </call>
+    </service>
+    <service id="knp_menu.menu_provider" class="Knp\Menu\Provider\ChainProvider">
+      <argument type="collection">
+        <argument type="service">
+          <service class="Knp\Bundle\MenuBundle\Provider\ContainerAwareProvider" public="false">
+            <tag name="knp_menu.provider"/>
+            <argument type="service" id="service_container"/>
+            <argument type="collection"/>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Knp\Bundle\MenuBundle\Provider\BuilderServiceProvider" public="false">
+            <tag name="knp_menu.provider"/>
+            <argument type="service" id="service_container"/>
+            <argument type="collection"/>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Knp\Bundle\MenuBundle\Provider\BuilderAliasProvider" public="false">
+            <tag name="knp_menu.provider"/>
+            <argument type="service" id="kernel"/>
+            <argument type="service" id="service_container"/>
+            <argument type="service" id="knp_menu.factory"/>
+          </service>
+        </argument>
+      </argument>
+    </service>
     <service id="session.storage" alias="session.storage.native"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher"/>
     <service id="swiftmailer.spool" alias="swiftmailer.mailer.default.spool"/>
@@ -3319,6 +4331,11 @@
     <service id="doctrine.orm.default_result_cache" alias="doctrine_cache.providers.doctrine.orm.default_result_cache"/>
     <service id="doctrine.orm.default_query_cache" alias="doctrine_cache.providers.doctrine.orm.default_query_cache"/>
     <service id="fos_user.util.username_canonicalizer" alias="fos_user.util.email_canonicalizer"/>
+    <service id="fos_rest.router" alias="router"/>
+    <service id="fos_rest.templating" alias="templating"/>
+    <service id="fos_rest.exception_handler" alias="fos_rest.view.exception_wrapper_handler"/>
+    <service id="fos_rest.inflector" alias="fos_rest.inflector.doctrine"/>
     <service id="console.command.sensiolabs_security_command_securitycheckercommand" alias="sensio_distribution.security_checker.command"/>
+    <service id="fos_rest.serializer" alias="serializer"/>
   </services>
 </container>

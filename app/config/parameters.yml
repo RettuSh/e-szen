@@ -1,7 +1,6 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_driver: pdo_mysql
-    database_host: '127.0.0.1'
+    database_host: 127.0.0.1
     database_port: 3306
     database_name: eszen
     database_user: root
@@ -11,4 +10,3 @@ parameters:
     mailer_user: null
     mailer_password: nulls
     secret: ThisTokenIsNotSoSecretChangeIt
-    locale: pl
