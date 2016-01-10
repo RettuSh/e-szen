@@ -1,11 +1,14 @@
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
-    
+
 lucky:
     path:     /lucky
     defaults: { _controller: AppBundle:Lucky:index }
-    
-home: 
+
+home:
     path:     /home
     defaults: { _controller: HomeBundle:Default:index }
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
