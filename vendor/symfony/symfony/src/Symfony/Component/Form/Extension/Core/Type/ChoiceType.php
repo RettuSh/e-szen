@@ -12,6 +12,7 @@
 namespace Symfony\Component\Form\Extension\Core\Type;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\ChoiceList\Factory\CachingFactoryDecorator;
 use Symfony\Component\Form\ChoiceList\Factory\PropertyAccessDecorator;
 use Symfony\Component\Form\ChoiceList\View\ChoiceGroupView;
 use Symfony\Component\Form\ChoiceList\ChoiceListInterface;
@@ -44,7 +45,11 @@ class ChoiceType extends AbstractType
 
     public function __construct(ChoiceListFactoryInterface $choiceListFactory = null)
     {
-        $this->choiceListFactory = $choiceListFactory ?: new PropertyAccessDecorator(new DefaultChoiceListFactory());
+        $this->choiceListFactory = $choiceListFactory ?: new CachingFactoryDecorator(
+            new PropertyAccessDecorator(
+                new DefaultChoiceListFactory()
+            )
+        );
     }
 
     /**
@@ -261,11 +266,10 @@ class ChoiceType extends AbstractType
 
             // Set by the user
             if (true !== $choicesAsValues) {
-                throw new \RuntimeException('The "choices_as_values" option should not be used. Remove it and flip the contents of the "choices" option instead.');
+                throw new \RuntimeException(sprintf('The "choices_as_values" option of the %s should not be used. Remove it and flip the contents of the "choices" option instead.', get_class($this)));
             }
 
-            // To be uncommented in 3.1
-            //@trigger_error('The "choices_as_values" option is deprecated since version 3.1 and will be removed in 4.0. You should not use it anymore.', E_USER_DEPRECATED);
+            @trigger_error('The "choices_as_values" option is deprecated since version 3.1 and will be removed in 4.0. You should not use it anymore.', E_USER_DEPRECATED);
 
             return true;
         };
@@ -302,7 +306,7 @@ class ChoiceType extends AbstractType
             'multiple' => false,
             'expanded' => false,
             'choices' => array(),
-            'choices_as_values' => null, // to be deprecated in 3.1
+            'choices_as_values' => null, // deprecated since 3.1
             'choice_loader' => null,
             'choice_label' => null,
             'choice_name' => null,
