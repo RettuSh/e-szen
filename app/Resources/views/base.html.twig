@@ -1,14 +1,31 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl-PL">
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}E-szen{% endblock %}</title>
+        <title>{% block title %}E-szen.pl{% endblock %}</title>
+
+        {% stylesheets
+            '@MopaBootstrapBundle/Resources/public/bootstrap/less/bootstrap.less' filter='less'
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
     </head>
     <body {% block bodyClass %}{% endblock %}>
+
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+
+        {% javascripts
+                '@jquery'
+              %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+
+        {% block javascripts %}
+        {% endblock %}
     </body>
 </html>

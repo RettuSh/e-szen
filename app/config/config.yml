@@ -36,13 +36,26 @@ framework:
     fragments:       ~
     http_method_override: true
     assets: ~
+                #apply_to: "\.less$"
 
 # Twig Configuration
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
 
-
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    bundles:        [ ] # <-
+    filters:
+        cssrewrite: ~
+        less:
+            node: /usr/local/bin/node
+            node_paths: [/opt/local/lib/node_modules]
+    assets:
+        jquery:
+            inputs:
+                - '@AppBundle/Resources/public/js/jquery.js'
 
 # Doctrine Configuration
 doctrine:
@@ -95,5 +108,10 @@ knp_menu:
     templating: false
     # the renderer to use, list is also available by default
     default_renderer: twig
-# Assetic Configuration
+
+stof_doctrine_extensions:
+   default_locale: "%locale%"
+   orm:
+        default:
+            sluggable: true
 

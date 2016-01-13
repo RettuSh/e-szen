@@ -29,7 +29,7 @@
         "symfony/swiftmailer-bundle": "^2.3",
         "symfony/monolog-bundle": "^2.8",
         "sensio/distribution-bundle": "^5.0",
-        "sensio/framework-extra-bundle": "^3.0.2",
+        "sensio/framework-extra-bundle": "@dev",
         "incenteev/composer-parameter-handler": "^2.0",
         "mopa/bootstrap-bundle": "3.0.0.0",
         "twbs/bootstrap": "3.3.6.0",
@@ -41,7 +41,9 @@
         "knplabs/knp-menu": "^2.1",
         "friendsofsymfony/rest-bundle": "^1.7",
         "symfony/assetic-bundle": "^2.7",
-        "craue/formflow-bundle": "~3.0@dev"
+        "craue/formflow-bundle": "~3.0@dev",
+        "stof/doctrine-extensions-bundle": "@dev",
+        "leafo/lessphp": "~0.3.9"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

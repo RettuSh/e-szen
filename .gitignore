@@ -1,7 +1,14 @@
 /nbproject/
 /nbproject/*
 /var/
-var/
-/var/*
+vendor/
+
+# added by GitSavvy
 var/*
-var/*.*
+
+# added by GitSavvy
+/var/cache/dev/annotations/10/5b5b435d464f535c5573657242756e646c655c4d6f64656c5c5573657224656e61626c6564405b416e6e6f745d5d5b315d.doctrinecache.data
+
+# added by GitSavvy
+/var/logs/
+/var/logs/*

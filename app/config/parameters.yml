@@ -10,3 +10,4 @@ parameters:
     mailer_user: null
     mailer_password: nulls
     secret: ThisTokenIsNotSoSecretChangeIt
+    urlname_regex: '(([0-9]+)|(?!ajax)([a-zA-Z]+((\-|_)[a-z0-9]+)+))'
